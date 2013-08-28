@@ -1,6 +1,7 @@
 Recipes::Application.routes.draw do
   devise_for :users
   resources :users
+  resources :recipes
 
   root 'home#home'
 
