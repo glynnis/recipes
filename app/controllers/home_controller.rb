@@ -4,6 +4,13 @@ class HomeController < ActionController::Base
   protect_from_forgery with: :exception
 
   def home
+    render layout: "application"
+    @user = current_user
+  end
+
+  def welcome
+    @user = current_user
+    render layout: "application"
   end
 
 end

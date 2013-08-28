@@ -5,6 +5,7 @@ gem 'devise'
 gem 'haml'
 gem 'jbuilder', '~> 1.2'
 gem 'jquery-rails'
+gem 'pry-rails', :group => :development
 gem 'rails', '4.0.0'
 gem 'sass-rails', '~> 4.0.0'
 gem 'turbolinks'
