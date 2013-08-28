@@ -4,6 +4,8 @@ Recipes::Application.routes.draw do
 
   root 'home#home'
 
+  get 'welcome/' => 'home#welcome', as: :welcome
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
