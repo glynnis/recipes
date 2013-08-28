@@ -4,15 +4,6 @@ Recipes::Application.routes.draw do
 
   root 'home#home'
 
-  # devise routes
-  # devise_for :user, 
-  # :as => '', 
-  # :path_names => { 
-  #   :sign_in => "login", 
-  #   :sign_out => "logout", 
-  #   :sign_up => "register" 
-  # }
-
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
