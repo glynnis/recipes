@@ -8,9 +8,10 @@
 %body
   %nav
     - if user_signed_in?
+      - binding.pry
       %p #{current_user.email}
       %p #{current_user.first_name}
-      = link_to "Sign out", destroy_user_session_path, :method => :delete
+      = link_to "Sign out", destroy_user_session_path
   %p.notice
     = notice
   %p.alert

@@ -9,10 +9,6 @@ class HomeController < ActionController::Base
   end
 
   def welcome
-    if !user_signed_in?
-      render new_user_session_path
-      flash[:alert] = "You must be signed in to do that!"
-    end
     @user = current_user
     render layout: "application"
   end
