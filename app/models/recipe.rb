@@ -1,7 +1,6 @@
 class Recipe < ActiveRecord::Base
   has_many :ingredients
   has_many :items, :through => :ingredients
-  #validates :items, presence: true
   validates :name, :prep_time, :cook_time, :steps, presence: true
 
   # for info on has_many through, see
