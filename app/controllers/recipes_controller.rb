@@ -8,16 +8,17 @@ class RecipesController < ActionController::Base
   end
 
   def create
-    render text: params[:recipe].inspect
+    @recipe = Recipe.new(recipe_params)
     @recipe.save
     redirect_to @recipe
   end
 
   def show
-    @post = Post.find(params[:id])
+    @recipe = Recipe.find(params[:id])
   end
 
   def index
+    @recipes = Recipe.all
   end
 
   private

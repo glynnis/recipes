@@ -1,0 +1,21 @@
+%h1 All Recipes
+
+%table
+  %tr
+    %th Name
+    %th Yield
+    %th Level
+    %th Prep Time
+    %th Cook Time
+    %th Steps
+    %th Source
+
+  - @recipes.each do |recipe|
+    %tr
+      %td= recipe.name
+      %td= recipe.yield
+      %td= recipe.level
+      %td= recipe.prep_time
+      %td= recipe.cook_time
+      %td= recipe.steps
+      %td= recipe.source
