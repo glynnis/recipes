@@ -5,6 +5,9 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :recipes
+  # validates :email, uniqueness: { case_sensitive: true}
+  # validates :first_name
+  # validates :last_name
 
   #t.string first_name
   #t.string last_name
