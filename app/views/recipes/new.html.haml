@@ -1,5 +1,7 @@
 %h2 Create a new recipe
 = form_for @recipe, url: recipes_path do |f|
+  - if @recipe.errors.present?
+    %p= @recipe.errors.full_messages
   = f.label :name
   %br
   = f.text_field :name, :autofocus => true
