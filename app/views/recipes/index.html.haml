@@ -21,3 +21,6 @@
       %td= recipe.cook_time
       %td= recipe.steps
       %td= recipe.source
+      %td= link_to 'Show', recipe
+      %td= link_to 'Edit', edit_recipe_path(recipe)
+      %td= button_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' }

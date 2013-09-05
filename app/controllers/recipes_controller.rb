@@ -2,6 +2,7 @@ class RecipesController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
+  before_action :set_recipe, only: [:show, :edit, :update, :destroy]
 
   def new
     @recipe = Recipe.new
@@ -16,17 +17,35 @@ class RecipesController < ActionController::Base
     end
   end
 
+  def destroy
+    @recipe.destroy
+    redirect_to recipes_url
+  end
+
+  def edit
+  end
+
   def show
-    @recipe = Recipe.find(params[:id])
   end
 
   def index
     @recipes = Recipe.all
   end
 
-  private
-  def recipe_params
-    params.require(:recipe).permit(:name, :yield, :level, :prep_time, :cook_time, :steps, :source)
+  def update
+    if @recipe.update(recipe_params)
+      redirect_to @recipe, notice: 'Recipe was successfully updated.'
+    else
+      render action: 'edit'
+    end
   end
 
+  private
+    def set_recipe
+      @recipe = Recipe.find(params[:id])
+    end
+
+    def recipe_params
+      params.require(:recipe).permit(:name, :yield, :level, :prep_time, :cook_time, :steps, :source)
+    end
 end

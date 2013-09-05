@@ -1,0 +1,42 @@
+%h2 Edit
+= form_for @recipe, url: recipes_path do |f|
+  - if @recipe.errors.present?
+    %p= @recipe.errors.full_messages
+  = f.label :name
+  %br
+  = f.text_field :name, :autofocus => true
+  %br
+  %br
+  = f.label :yield
+  %br
+  = f.text_field :yield, :autofocus => true
+  %br
+  %br
+  = f.label :level
+  %br
+  = f.text_field :level, :autofocus => true
+  %br
+  %br
+  = f.label :prep_time
+  %br
+  = f.text_field :prep_time, :autofocus => true
+  %br
+  %br
+  = f.label :cook_time
+  %br
+  = f.text_field :cook_time, :autofocus => true
+  %br
+  %br
+  = f.label :steps
+  %br
+  = f.text_area :steps, :autofocus => true
+  %br
+  %br
+  = f.label :source
+  %br
+  = f.text_field :source, :autofocus => true
+  %br
+  %br
+  = f.submit "Edit Recipe"
+
+= link_to 'Back', recipes_path
