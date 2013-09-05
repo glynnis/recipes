@@ -2,6 +2,7 @@ Recipes::Application.routes.draw do
   devise_for :users
   resources :users
   resources :recipes
+  resources :items
 
   root 'home#home'
 

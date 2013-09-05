@@ -1,0 +1,11 @@
+= link_to 'Create new item', new_item_path
+
+%h1 All Items
+
+%table
+  %tr
+    %th Name
+
+  - @items.each do |item|
+    %tr
+      %td= item.name

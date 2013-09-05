@@ -1,0 +1,12 @@
+%h2 Create a new item
+= form_for @item, url: items_path do |f|
+  - if @item.errors.present?
+    %p= @item.errors.full_messages
+  = f.label :name
+  %br
+  = f.text_field :name, :autofocus => true
+  %br
+  %br
+  = f.submit "Create Item"
+
+= link_to 'Back', items_path
